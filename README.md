@@ -6,7 +6,7 @@
 目录
 
 * 算法专题
-    * leetcode算法集
+    * [leetcode算法集](https://github.com/Elric-pp/blog/issues/1)
     * 数据结构与算法学习笔记
 * 前端资源
 * 学习总结
