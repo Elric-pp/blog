@@ -1,11 +1,11 @@
 ## 目录
   1. [moveZeroes](#movezeroes)
-  1. [Convert Sorted Array to Binary Search Tree](#convert sorted array to binary search tree)
-  1. [Remove Duplicates from Sorted Array](#remove duplicates from sorted array)
-  1. [First Bad Version](#first bad version)
-  1. [Valid Anagram](#valid anagram)
+  1. [Convert Sorted Array to Binary Search Tree](#convert-sorted-array-to-binary-search-tree)
+  1. [Remove Duplicates from Sorted Array](#remove-duplicates-from-sorted-array)
+  1. [First Bad Version](#first-bad-version)
+  1. [Valid Anagram](#valid-anagram)
 
-***
+
 
 ## moveZeroes
 &nbsp;&nbsp;Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
