@@ -1,13 +1,13 @@
-##目录
-  1. [moveZeroes](#moveZeroes)
-  1. [Convert Sorted Array to Binary Search Tree](#Convert Sorted Array to Binary Search Tree)
-  1. [Remove Duplicates from Sorted Array](#Remove Duplicates from Sorted Array)
-  1. [First Bad Version](#First Bad Version)
-  1. [Valid Anagram](#Valid Anagram)
+## 目录
+  1. [moveZeroes](#movezeroes)
+  1. [Convert Sorted Array to Binary Search Tree](#convert sorted array to binary search tree)
+  1. [Remove Duplicates from Sorted Array](#remove duplicates from sorted array)
+  1. [First Bad Version](#first bad version)
+  1. [Valid Anagram](#valid anagram)
 
 ***
 
-##moveZeroes
+## moveZeroes
 &nbsp;&nbsp;Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
 
 - For example, 
@@ -35,7 +35,7 @@ var moveZeroes = function(nums) {
 ***
 
 
-##Convert Sorted Array to Binary Search Tree
+## Convert Sorted Array to Binary Search Tree
 ```javascript
 /**
  * Definition for a binary tree node.
@@ -67,7 +67,7 @@ function Buildtree(nums, start, end) {
 
 ***
 
-##Remove Duplicates from Sorted Array
+## Remove Duplicates from Sorted Array
 &nbsp;&nbsp;Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length. 
 
 &nbsp;&nbsp;Do not allocate extra space for another array, you must do this in place with constant memory. 
@@ -92,7 +92,7 @@ var removeDuplicates = function(nums) {
 ***
 
 
-##First Bad Version
+## First Bad Version
 &nbsp;&nbsp;You are a product manager and currently leading a team to develop a new product. Unfortunately, the latest version of your product fails the quality check. Since each version is developed based on the previous version, all the versions after a bad version are also bad.
 
 &nbsp;&nbsp;Suppose you have n versions [1, 2, …, n] and you want to find out the first bad one, which causes all the following ones to be bad.
@@ -137,7 +137,7 @@ var solution = function(isBadVersion) {
 ***
 
 
-##Valid Anagram
+## Valid Anagram
 &nbsp;&nbsp;Given two strings s and t, write a function to determine if t is an anagram of s.
 
 - For example,
