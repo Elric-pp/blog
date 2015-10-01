@@ -5,7 +5,7 @@
   1. [First Bad Version](#first-bad-version)
   1. [Valid Anagram](#valid-anagram)
   1. [Maximum Depth of Binary Tree](#maximum-depth-of-binary-tree)
-
+  1. [Delete Node in a Linked List](#delete-node-in-a-linked-list)
 
 ## moveZeroes
 &nbsp;&nbsp;Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
@@ -182,5 +182,29 @@ var isAnagram = function(s, t) {
  */
 var maxDepth = function(root) {
   return root ? Math.max(maxDepth(root.left), maxDepth(root.right))+1 : 0;
+};
+```
+
+## Delete Node in a Linked List
+> Write a function to delete a node (except the tail) in a singly linked list, given only access to that node.
+
+> Supposed the linked list is 1 -> 2 -> 3 -> 4 and you are given the third node with value 3, the linked list should become 1 -> 2 -> 4 after calling your function.
+
+```javascript
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+/**
+ * @param {ListNode} node
+ * @return {void} Do not return anything, modify node in-place instead.
+ */
+var deleteNode = function(node) {
+    var nextNode = node.next;
+    node.val = nextNode.val;
+    node.next = nextNode.next;
 };
 ```
