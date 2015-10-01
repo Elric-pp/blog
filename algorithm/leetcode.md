@@ -4,7 +4,7 @@
   1. [Remove Duplicates from Sorted Array](#remove-duplicates-from-sorted-array)
   1. [First Bad Version](#first-bad-version)
   1. [Valid Anagram](#valid-anagram)
-
+  1. [Maximum Depth of Binary Tree](#maximum-depth-of-binary-tree)
 
 
 ## moveZeroes
@@ -158,5 +158,29 @@ var isAnagram = function(s, t) {
     s = s.split("").sort().join("");
     t = t.split("").sort().join("");
     return s === t;
+};
+```
+
+
+## Maximum Depth of Binary Tree
+
+> Given a binary tree, find its maximum depth.
+
+> The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
+
+```javascript
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var maxDepth = function(root) {
+  return root ? Math.max(maxDepth(root.left), maxDepth(root.right))+1 : 0;
 };
 ```
