@@ -1,9 +1,9 @@
 ##目录
-  1. [moveZeroes](#moveZeroes)
-  1. [Convert Sorted Array to Binary Search Tree](#Convert Sorted Array to Binary Search Tree)
-  1. [Remove Duplicates from Sorted Array](#Remove Duplicates from Sorted Array)
-  1. [First Bad Version](#First Bad Version)
-  1. [Valid Anagram](#Valid Anagram)
+  1. [moveZeroes](#movezeroes)
+  1. [Convert Sorted Array to Binary Search Tree](#convert-sorted-array-to-binary-search-tree)
+  1. [Remove Duplicates from Sorted Array](#remove-duplicates-from-sorted-array)
+  1. [First Bad Version](#first-bad-version)
+  1. [Valid Anagram](#valid-anagram)
 
 
 
