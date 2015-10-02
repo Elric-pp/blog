@@ -6,6 +6,7 @@
   1. [Valid Anagram](#valid-anagram)
   1. [Maximum Depth of Binary Tree](#maximum-depth-of-binary-tree)
   1. [Delete Node in a Linked List](#delete-node-in-a-linked-list)
+  1. [Same Tree](#same-tree)
 
 ## moveZeroes
 &nbsp;&nbsp;Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
@@ -206,5 +207,30 @@ var deleteNode = function(node) {
     var nextNode = node.next;
     node.val = nextNode.val;
     node.next = nextNode.next;
+};
+```
+
+## Same Tree
+> Given two binary trees, write a function to check if they are equal or not.
+
+> Two binary trees are considered equal if they are structurally identical and the nodes have the same value.
+
+```
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} p
+ * @param {TreeNode} q
+ * @return {boolean}
+ */
+var isSameTree = function(p, q) {
+    if (p===null && q===null) return true;
+    if (p===null || q===null ) return false;
+    return p.val === q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right); 
 };
 ```
