@@ -10,5 +10,6 @@
     * 数据结构与算法学习笔记
 * 前端资源
 * 学习总结
+    * [正则表达式学习笔记](https://github.com/Elric-pp/blog/issues/2)
     * angular使用总结
     * react使用总结
