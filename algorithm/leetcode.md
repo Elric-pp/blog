@@ -7,6 +7,8 @@
   1. [Maximum Depth of Binary Tree](#maximum-depth-of-binary-tree)
   1. [Delete Node in a Linked List](#delete-node-in-a-linked-list)
   1. [Same Tree](#same-tree)
+  1. [Invert Binary Tree](#invert-binary-tree)
+
 
 ## moveZeroes
 &nbsp;&nbsp;Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
@@ -232,5 +234,51 @@ var isSameTree = function(p, q) {
     if (p===null && q===null) return true;
     if (p===null || q===null ) return false;
     return p.val === q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right); 
+};
+```
+
+
+
+## Invert Binary Tree 
+> Invert a binary tree.
+>> ```
+           4
+         /   \
+        2     7
+       / \   / \
+      1  3 6   9
+        ```
+>
+> to
+>> ```
+             4
+           /   \
+          7     2
+         / \   / \
+        9  6 3   1
+      ```
+>
+> Trivia:
+    This problem was inspired by this original tweet by Max Howell:
+>> Google: 90% of our engineers use the software you wrote (Homebrew), but you can’t invert a binary tree on a whiteboard so fuck off.
+
+```javascript
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {TreeNode}
+ */
+var invertTree = function(root) {
+    if (root === null ) return root;
+    var tmp = root.left;
+    root.left = invertTree(root.right);
+    root.right = invertTree(tmp);
+    return root;
 };
 ```
