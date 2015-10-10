@@ -8,17 +8,20 @@
   1. [Delete Node in a Linked List](#delete-node-in-a-linked-list)
   1. [Same Tree](#same-tree)
   1. [Invert Binary Tree](#invert-binary-tree)
+  1. [Lowest Common Ancestor of a Binary Search Tree](#lowest-common-ancestor-of-a-binary-search-tree)
+  1. [Number of 1 Bits](#number-of-1-bits)
 
 
 ## moveZeroes
-&nbsp;&nbsp;Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+> Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
 
-- For example, 
->&nbsp;&nbsp;given nums = [0, 1, 0, 3, 12], after calling your function, nums should be [1, 3, 12, 0, 0].
+> For example, 
+>> given nums = [0, 1, 0, 3, 12], after calling your function, nums should be [1, 3, 12, 0, 0].
+>
+> Note:
+> 1. You must do this in-place without making a copy of the array.
+> 2. Minimize the total number of operations.
 
-- Note:
-1. You must do this in-place without making a copy of the array.
-2. Minimize the total number of operations.
 ```javascript
 /**
 * @param {number[]} nums
@@ -71,11 +74,12 @@ function Buildtree(nums, start, end) {
 ***
 
 ## Remove Duplicates from Sorted Array
-&nbsp;&nbsp;Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length. 
+> Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length. 
 
-&nbsp;&nbsp;Do not allocate extra space for another array, you must do this in place with constant memory. 
-- For example,
-> Given input array nums = [1,1,2], Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively. It doesn’t matter what you leave beyond the new length.
+> Do not allocate extra space for another array, you must do this in place with constant memory. 
+
+> For example,
+>> Given input array nums = [1,1,2], Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively. It doesn’t matter what you leave beyond the new length.
 
 ```javascript
 /**
@@ -96,11 +100,11 @@ var removeDuplicates = function(nums) {
 
 
 ## First Bad Version
-&nbsp;&nbsp;You are a product manager and currently leading a team to develop a new product. Unfortunately, the latest version of your product fails the quality check. Since each version is developed based on the previous version, all the versions after a bad version are also bad.
+> You are a product manager and currently leading a team to develop a new product. Unfortunately, the latest version of your product fails the quality check. Since each version is developed based on the previous version, all the versions after a bad version are also bad.
 
-&nbsp;&nbsp;Suppose you have n versions [1, 2, …, n] and you want to find out the first bad one, which causes all the following ones to be bad.
+> Suppose you have n versions [1, 2, …, n] and you want to find out the first bad one, which causes all the following ones to be bad.
 
-&nbsp;&nbsp;You are given an API bool isBadVersion(version) which will return whether version is bad. Implement a function to find the first bad version. You should minimize the number of calls to the API.
+> You are given an API bool isBadVersion(version) which will return whether version is bad. Implement a function to find the first bad version. You should minimize the number of calls to the API.
 
 ```javascript
  /**
@@ -141,14 +145,14 @@ var solution = function(isBadVersion) {
 
 
 ## Valid Anagram
-&nbsp;&nbsp;Given two strings s and t, write a function to determine if t is an anagram of s.
+> Given two strings s and t, write a function to determine if t is an anagram of s.
 
-- For example,
-> s = “anagram”, t = “nagaram”, return true. 
-> s = “rat”, t = “car”, return false.
+> For example,
+>> s = “anagram”, t = “nagaram”, return true. 
+>> s = “rat”, t = “car”, return false.
 
-- Note: 
-  You may assume the string contains only lowercase alphabets.
+> Note: 
+> You may assume the string contains only lowercase alphabets.
 
 ```javascript
   /**
@@ -241,22 +245,20 @@ var isSameTree = function(p, q) {
 
 ## Invert Binary Tree 
 > Invert a binary tree.
->> ```
+>> 
            4
          /   \
         2     7
        / \   / \
-      1  3 6   9
-        ```
+      1  3  6   9
 >
 > to
->> ```
+>> 
              4
            /   \
           7     2
          / \   / \
-        9  6 3   1
-      ```
+        9  6  3   1
 >
 > Trivia:
     This problem was inspired by this original tweet by Max Howell:
@@ -280,5 +282,70 @@ var invertTree = function(root) {
     root.left = invertTree(root.right);
     root.right = invertTree(tmp);
     return root;
+};
+```
+
+
+## Lowest Common Ancestor of a Binary Search Tree
+>Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.
+
+>According to the definition of LCA on Wikipedia: “The lowest common ancestor is defined between two nodes v and w as the lowest node in T that has both v and w as descendants (where we allow a node to be a descendant of itself).”
+>>```
+>>        _______6______
+>>       /              \
+>>    ___2__          ___8__
+>>   /      \        /      \
+>>   0      _4_     7        9
+>>         /   \
+>>         3   5
+>>```
+>
+>For example, the lowest common ancestor (LCA) of nodes 2 and 8 is 6. Another example is LCA of nodes 2 and 4 is 2, since a node can be a descendant of itself according to the LCA definition.
+
+```javascript
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val) {
+ *     this.val = val;
+ *     this.left = this.right = null;
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @param {TreeNode} p
+ * @param {TreeNode} q
+ * @return {TreeNode}
+ */
+var lowestCommonAncestor = function(root, p, q) {
+    if (p.val>root.val && q.val>root.val)
+       return lowestCommonAncestor(root.right, p, q);
+    
+    if (p.val<root.val && q.val<root.val)
+       return lowestCommonAncestor(root.left, p, q);
+    
+    return root;
+};
+```
+
+
+## Number of 1 Bits
+
+> Write a function that takes an unsigned integer and returns the number of ’1' bits it has (also known as the Hamming weight).
+
+> For example, the 32-bit integer ’11' has binary representation 00000000000000000000000000001011, so the function should return 3.
+
+
+```javascript
+/**
+ * @param {number} n - a positive integer
+ * @return {number}
+ */
+var hammingWeight = function(n) {
+    var count = 0;
+    n = n.toString(2);
+    for (var i = 0; i < n.length; i++) {
+        if(n[i] === "1") count++;
+    }
+    return count;
 };
 ```
