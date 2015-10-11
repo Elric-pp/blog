@@ -10,6 +10,7 @@
   1. [Invert Binary Tree](#invert-binary-tree)
   1. [Lowest Common Ancestor of a Binary Search Tree](#lowest-common-ancestor-of-a-binary-search-tree)
   1. [Number of 1 Bits](#number-of-1-bits)
+  1. [Contains Duplicate](#contains-duplicate)
 
 
 ## moveZeroes
@@ -347,5 +348,24 @@ var hammingWeight = function(n) {
         if(n[i] === "1") count++;
     }
     return count;
+};
+```
+
+## Contains Duplicate 
+
+> Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.
+
+```javascript
+/**
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var containsDuplicate = function(nums) {
+    var tpl = {};
+    for (var i = 0; i < nums.length; i++) {
+        tpl[nums[i]] = tpl[nums[i]] + 1 || 1;
+        if (tpl[nums[i]] > 1) return true;
+    }
+    return false;
 };
 ```
