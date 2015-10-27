@@ -11,12 +11,13 @@
   1. [Lowest Common Ancestor of a Binary Search Tree](#lowest-common-ancestor-of-a-binary-search-tree)
   1. [Number of 1 Bits](#number-of-1-bits)
   1. [Contains Duplicate](#contains-duplicate)
+  1. [Climbing Stairs](#climbing-stairs)
 
 
 ## moveZeroes
 > Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements.
 
-> For example, 
+> For example,
 >> given nums = [0, 1, 0, 3, 12], after calling your function, nums should be [1, 3, 12, 0, 0].
 >
 > Note:
@@ -75,9 +76,9 @@ function Buildtree(nums, start, end) {
 ***
 
 ## Remove Duplicates from Sorted Array
-> Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length. 
+> Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
 
-> Do not allocate extra space for another array, you must do this in place with constant memory. 
+> Do not allocate extra space for another array, you must do this in place with constant memory.
 
 > For example,
 >> Given input array nums = [1,1,2], Your function should return length = 2, with the first two elements of nums being 1 and 2 respectively. It doesn’t matter what you leave beyond the new length.
@@ -110,7 +111,7 @@ var removeDuplicates = function(nums) {
 ```javascript
  /**
  * Definition for isBadVersion()
- * 
+ *
  * @param {integer} version number
  * @return {boolean} whether the version is bad
  * isBadVersion = function(version) {
@@ -149,10 +150,10 @@ var solution = function(isBadVersion) {
 > Given two strings s and t, write a function to determine if t is an anagram of s.
 
 > For example,
->> s = “anagram”, t = “nagaram”, return true. 
+>> s = “anagram”, t = “nagaram”, return true.
 >> s = “rat”, t = “car”, return false.
 
-> Note: 
+> Note:
 > You may assume the string contains only lowercase alphabets.
 
 ```javascript
@@ -238,15 +239,15 @@ var deleteNode = function(node) {
 var isSameTree = function(p, q) {
     if (p===null && q===null) return true;
     if (p===null || q===null ) return false;
-    return p.val === q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right); 
+    return p.val === q.val && isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
 };
 ```
 
 
 
-## Invert Binary Tree 
+## Invert Binary Tree
 > Invert a binary tree.
->> 
+>>
            4
          /   \
         2     7
@@ -254,7 +255,7 @@ var isSameTree = function(p, q) {
       1  3  6   9
 >
 > to
->> 
+>>
              4
            /   \
           7     2
@@ -320,10 +321,10 @@ var invertTree = function(root) {
 var lowestCommonAncestor = function(root, p, q) {
     if (p.val>root.val && q.val>root.val)
        return lowestCommonAncestor(root.right, p, q);
-    
+
     if (p.val<root.val && q.val<root.val)
        return lowestCommonAncestor(root.left, p, q);
-    
+
     return root;
 };
 ```
@@ -351,7 +352,7 @@ var hammingWeight = function(n) {
 };
 ```
 
-## Contains Duplicate 
+## Contains Duplicate
 
 > Given an array of integers, find if the array contains any duplicates. Your function should return true if any value appears at least twice in the array, and it should return false if every element is distinct.
 
@@ -367,5 +368,28 @@ var containsDuplicate = function(nums) {
         if (tpl[nums[i]] > 1) return true;
     }
     return false;
+};
+```
+
+
+## Climbing Stairs
+> You are climbing a stair case. It takes n steps to reach to the top.
+
+> Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
+
+```javascript
+/**
+* @param {number} n
+* @return {number}
+*/
+var climbStairs = function(n) {
+    if(n <= 3) return n;
+    var s1 = 1, s2 = 2, result;
+    for (var i = 2; i < n; ++i) {
+        result = s1 + s2;
+        s1 = s2;
+        s2 = result;
+    }
+    return result;
 };
 ```
